@@ -1,0 +1,61 @@
+<div class="login-row">
+<form [formGroup]="signinForm"  novalidate autocomplete="false" >
+  <div class="row no-gutters">
+    <div class="col-md-12">
+      <div class="top-bar row no-gutters justify-content-between">
+        <div class="col-lg-4 col-md-4 col-sm-8 detail-logo">
+          <!-- <img routerLink="/" src="/assets/image/"> -->
+          <span routerLink="/" class="logo-text">GFSC </span>
+        </div>
+        <div class="col-xl-6 col-lg-8 col-md-8 col-sm-12 col-ss-12 login">
+          <span class="login-title"> Not a user yet? Register here... </span>
+          <a class="btn btn-outline-primary sign-up"  routerLink="/register" >SIGN UP</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row no-gutters justify-content-center">
+    <div class='col-xs-12 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-lg-4 col-lg-offset-4 login-header ' >
+      <p>Sign In</p>
+    </div>
+  </div>
+  
+  <div class="row no-gutters justify-content-center">
+    <div  class="col-xs-12 col-md-6 col-sm-8 col-lg-4 login-box ">
+      <div class='border' ></div>
+      <form  class="login-form col-sm-12">
+        <div class='login-subheader' >
+          <p>Welcome Back, login to your account...</p>
+        </div>
+        <div class='col-sm-12' >
+          <p *ngIf="message">{{message}}</p>
+        </div>
+        <div class="col-sm-12" >
+          <div class="form group">
+            <label for="name">Email</label>
+            <input type="email" class="form-control" formControlName=""  id="email" placeholder="Email" name="username" >
+          </div>
+        </div>
+        <div class='col-sm-12'>
+          <div class="form group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" formControlName="" id="email" placeholder="password" name="password" > 
+          </div>
+        </div>
+        <div class="col-sm-12">
+          <div class="form group">
+            <a [routerLink]="['/forgotpassword']"  >Forgot Password ?</a> 
+          </div>
+        </div>
+        <div class="col-sm-12">
+          <div class="form group">
+            <button type="submit" (click)="submit()" class="form-control btn btn-warning">Sign In</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</form>
+</div>
+

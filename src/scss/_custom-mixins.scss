@@ -1,0 +1,273 @@
+
+//Media Mixins
+
+
+$tab: 767px;
+$l-tab: 991px;
+$phone: 575px;
+$s-phone: 420px;
+
+
+@mixin l-tab{
+  $max: $l-tab;
+  @if $max {
+    @media (max-width: $max) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+
+// @mixin tab{
+//   $max: $tab;
+//   @if $max {
+//     @media (max-width: $max) {
+//       @content;
+//     }
+//   } @else {
+//     @content;
+//   }
+// }
+
+@mixin tab{
+    @media (max-width: $tab) {
+      @content;
+    } 
+}
+
+@mixin phone{
+  $max: $phone;
+  @if $max {
+    @media (max-width: $max) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+
+@mixin s-phone{
+  $max: $s-phone;
+  @if $max {
+    @media (max-width: $max) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+
+
+//Primary Logo with text
+@mixin logo{
+	display: flex;
+	
+	img{
+		// float: left;
+		height: 50px;
+		width: 50px;
+		object-fit: contain;
+		
+		&:hover{cursor: pointer;}
+	}
+	.logo-text{
+		font-size: 25px;
+		font-weight: 500;
+		color: $fbking-primary;
+		letter-spacing: 4px;
+		display: flex;
+		align-items: center;
+		padding-left: 5px;
+
+		&:hover{cursor: pointer;}
+	}
+}
+
+@mixin repeat-image($height){
+	width: 100%;
+	height: $height;
+	position: 	absolute;
+	z-index: 5;
+	background-image: url("/assets/image/repeat-0.75.png");
+}
+
+@mixin repeat-text{
+	font-size: 32px;
+	font-weight: 700;
+	display: flex;
+	z-index: 6;
+	margin:auto;
+	text-align: center;
+	padding: 0 5%;
+	@include tab{font-size: 30px;}
+	@include s-phone{font-size: 28px;}
+	// align-items: center;
+	// @extend .m-auto;
+	// position: absolute;
+	// transform: translate($skewX,$skewY);
+}
+
+@mixin repeat-box($height){
+	display: flex;
+	height: $height;
+}
+
+@mixin btn-block{
+	paddding: 6px 20px;
+	color: $white;
+	font-weight: 500;
+}
+
+
+
+
+
+
+//Button
+
+@mixin btn-standard{
+		color: $white;
+		padding: 10px 26px;
+		font-size: 16px;
+		font-weight: 500;
+		border-radius: 2px;
+		letter-spacing: 0.4px;
+		@include l-tab{font-size: 18px;}
+		@include tab{font-size: 16px;}
+		@include phone{padding: 10px 20px;}
+}
+
+
+
+
+//COMPONENTS
+
+//Sidebar for static pages
+
+@mixin sidebar{
+	.sidebar{
+
+		@include l-tab{display: none;}
+
+		.background{
+			background: darken($fbking-primary, 5%);
+			background-image: url("/assets/image/background-25@1x.png");
+			position: fixed;
+			height: 100%;
+			width: 100%;
+			box-shadow: 5px 0px 20px 0px $gray-400;
+
+			.detail-logo{
+				@include logo;
+				.logo-text{color: $white;}
+				padding: 20px;
+			}
+			.title{
+				margin: 10% 2%;
+				font-size: 28px;
+				color: $gray-800;
+				font-weight: 500;
+				text-align: center;
+			}
+			.image{
+				margin: 0px -1px 0px -15px;
+				position: absolute;
+				bottom: 0;
+				img{width: 100%}
+			}
+		}
+	}
+}
+
+
+//Topbar for static components
+@mixin top-bar{
+	.top-bar{
+		margin: 30px 30px 10px 30px;
+
+
+		.detail-logo{
+			@include logo;
+			visibility: hidden;
+
+			@include l-tab{visibility: visible;}
+		}
+
+		.login{
+			margin-top: 1%;
+			text-align: right;
+			.login-title{
+				font-size: 16px;
+				font-weight: 500;
+				color: $gray-700;
+				letter-spacing: 0.5px;
+				align-items: center;
+				padding-right: 10px;
+				@include phone {font-size: 16px;}
+				@include s-phone {font-size: 14px;}
+			}
+			button{
+				@include btn-standard;
+				color: $fbking-primary; font-size: 16px;
+				&:hover{
+					color: $white !important;
+				}
+
+				@include l-tab,tab,phone,s-phone{font-size: 14px;}
+			}
+
+			@include s-phone{margin-top: 7%;}
+		}
+	}
+}
+
+//static page form title
+@mixin static-form-title{
+	font-size: 22px;
+	font-weight: 500;
+	letter-spacing: 0.5px;
+	color: $gray-800;
+	margin-bottom: 8%;
+	text-align: center;
+}
+
+
+//TOP BAR for login & teams
+
+@mixin top-bar-login{
+	.top-bar{
+		margin: 20px 30px 10px 30px;
+		.detail-logo{
+			@include logo;
+		}
+		.login{
+			margin-top: 1%;
+			text-align: right;
+			.login-title{
+				font-size: 16px;
+				font-weight: 500;
+				color: $gray-700;
+				letter-spacing: 0.5px;
+				align-items: center;
+				padding-right: 10px;
+				@include phone {font-size: 16px;}
+				@include s-phone {font-size: 14px;}
+			}
+			a{
+				@include btn-standard;
+				color: $gray-700; font-size: 13px;
+			}
+		}
+	}
+}
+
+@mixin login-box-border{
+	.border{
+		padding: 0;
+	    background: linear-gradient(90deg,#02ceff,#29cebf);
+	    border-radius: 3px 3px 0 0;
+	    display: block;
+	    height: 6px;
+	}
+}

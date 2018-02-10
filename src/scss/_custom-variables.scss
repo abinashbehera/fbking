@@ -1,0 +1,139 @@
+
+
+
+$white:  #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-150: #bbbbbb !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #868e96 !default;
+$gray-650: #777777 !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-850: #333333 !default;
+$gray-900: #212529 !default;
+$black:  #000 !default;
+
+$grays: (
+  100: $gray-100,
+  150: $gray-150,
+  200: $gray-200,
+  300: $gray-300,
+  400: $gray-400,
+  500: $gray-500,
+  600: $gray-600,
+  650: $gray-650,
+  700: $gray-700,
+  800: $gray-800,
+  850: $gray-850,
+  900: $gray-900
+) !default;
+
+
+$blue:    #007bff !default;
+$fbking-blue:    #007bff !default;
+$fbking-green:    #007bff !default;
+$fbking-cyan:    #007bff !default;
+$fbking-yellow:    #007bff !default;
+$fbking-red:    #007bff !default;
+$indigo:  #6610f2 !default;
+$purple:  #6f42c1 !default;
+$pink:    #e83e8c !default;
+$red:     #dc3545 !default;
+$orange:  #fd7e14 !default;
+$yellow:  #ffc107 !default;
+$green:   #28a745 !default;
+$teal:    #20c997 !default;
+$cyan:    #17a2b8 !default;
+
+$fbking-primary: #fb7423;
+$fbking-primary-dark: #fb7423;
+$fbking-primary-darker: #fb7423;
+$fbking-primary-light: #fb7423;
+$website-background:  $white!important;//#f7f9f9;
+
+$colors: (
+  blue: $blue,
+  indigo: $indigo,
+  purple: $purple,
+  pink: $pink,
+  red: $red,
+  orange: $orange,
+  yellow: $yellow,
+  green: $green,
+  teal: $teal,
+  cyan: $cyan,
+  white: $white,
+  gray: $gray-600,
+  gray-dark: $gray-800,
+  fbking-primary: $fbking-primary,
+  fbking-primary-light: $fbking-primary-light,
+  fbking-primary-dark: $fbking-primary-dark,
+  fbking-primary-darker: $fbking-primary-darker,
+  website-background: $website-background
+) !default;
+
+$theme-colors: (
+  primary: $fbking-primary,
+  secondary: $gray-600,
+  success: $green,
+  info: $cyan,
+  warning: $yellow,
+  danger: $red,
+  light: $gray-100,
+  dark: $gray-800
+) !default;
+
+$grid-breakpoints: (
+  xs: 0,
+  ss: 420px,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+) !default;
+
+$button-shadow:     4px 4px 20px 0 #bbbbbb;
+
+
+// @each $breakpoint in map-keys($grid-breakpoints) {
+//   @include media-breakpoint-down($breakpoint) {
+//     $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+//     @each $prop, $abbrev in (margin: m, padding: p) {
+//       @each $size, $length in $spacers {
+
+//         .#{$abbrev}#{$infix}-#{$size}  { #{$prop}:        $length !important; }
+//         .#{$abbrev}t#{$infix}-#{$size} { #{$prop}-top:    $length !important; }
+//         .#{$abbrev}r#{$infix}-#{$size} { #{$prop}-right:  $length !important; }
+//         .#{$abbrev}b#{$infix}-#{$size} { #{$prop}-bottom: $length !important; }
+//         .#{$abbrev}l#{$infix}-#{$size} { #{$prop}-left:   $length !important; }
+//         .#{$abbrev}x#{$infix}-#{$size} {
+//           #{$prop}-right: $length !important;
+//           #{$prop}-left:  $length !important;
+//         }
+//         .#{$abbrev}y#{$infix}-#{$size} {
+//           #{$prop}-top:    $length !important;
+//           #{$prop}-bottom: $length !important;
+//         }
+//       }
+//     }
+
+//     // Some special margin utils
+//     .m#{$infix}-auto  { margin:        auto !important; }
+//     .mt#{$infix}-auto { margin-top:    auto !important; }
+//     .mr#{$infix}-auto { margin-right:  auto !important; }
+//     .mb#{$infix}-auto { margin-bottom: auto !important; }
+//     .ml#{$infix}-auto { margin-left:   auto !important; }
+//     .mx#{$infix}-auto {
+//       margin-right: auto !important;
+//       margin-left:  auto !important;
+//     }
+//     .my#{$infix}-auto {
+//       margin-top:    auto !important;
+//       margin-bottom: auto !important;
+//     }
+//   }
+// }
